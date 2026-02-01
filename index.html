@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine’s Comic Con?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: 0.2s ease;
+    }
+
+    #yesBtn {
+      background: #00e676;
+      color: #000;
+    }
+
+    #noBtn {
+      background: #ff1744;
+      color: #fff;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey 👀</h1>
+    <p>
+      Will you go to <strong>Comic Con</strong> with me on <strong>Valentine’s Day</strong>? 💖🎭
+    </p>
+
+    <button id="yesBtn">YES 😍</button>
+    <button id="noBtn">NO 🙃</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    function moveButton() {
+      const padding = 50;
+      const x = Math.random() * (window.innerWidth - padding);
+      const y = Math.random() * (window.innerHeight - padding);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
+
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      alert("YES?! 😍🔥 Comic Con Valentine confirmed!");
+    });
+  </script>
+
+</body>
+</html>
